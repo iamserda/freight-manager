@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Box:
     def __init__(self, name:str=None, width:float=0, length:float=0 , height:float=0, weight:float=0):
         self.id:int = None
