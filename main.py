@@ -75,6 +75,13 @@ def add_boxes_to_db(boxes:list,db_connector:sqlite3.Connection)->None:
     except sqlite3.IntegrityError as err:
         print(err)
 
+def seed_db(records, db_conn):
+    for record in records:
+        del record["id"]
+        del record["container_id"]
+    boxes = [box.__dict__ for box in [Box(**record) for record in records]]
+    add_boxes_to_db(boxes=boxes, db_connector=db_conn)
+
 if __name__ == "__main__":
     
     # creates db, returns connection obj.
@@ -84,14 +91,9 @@ if __name__ == "__main__":
     create_boxes_table(db_connector=db_conn)
     # create_freights_table(db_connector=db_conn)
     # create_containers_table(db_connector=db_conn)
-
+    # seed_db(records, db_conn)
     # create
     # run menu
-    # show_app_menu()
-    from db.data_import import records
-    for record in records:
-        del record["id"]
-        del record["container_id"]
-    boxes = [box.__dict__ for box in [Box(**record) for record in records]]
-    add_boxes_to_db(boxes=boxes, db_connector=db_conn)
+    show_app_menu()
+
     db_conn.close()
