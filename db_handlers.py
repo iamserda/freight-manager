@@ -1,6 +1,5 @@
 import sqlite3
 from models import Box
-from db.data_import import records
 
 
 def create_db():
