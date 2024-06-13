@@ -1,231 +1,181 @@
-import json
+import json # [missing-module-docstring]
+
 
 records = [
     {
-        "id": 1,
         "name": "Arya Stark",
         "weight": 12,
         "width": 4,
         "length": 3,
-        "height": 2,
-        "container_id": 101,
+        "height": 2
     },
     {
-        "id": 2,
-        "name": "Brienne Tarth",
-        "weight": 14,
-        "width": 3,
-        "length": 3,
-        "height": 3,
-        "container_id": 102,
-    },
-    {
-        "id": 3,
-        "name": "Cersei Lannister",
-        "weight": 15,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 103,
-    },
-    {
-        "id": 4,
-        "name": "Daenerys Targaryen",
-        "weight": 16,
-        "width": 4,
-        "length": 4,
-        "height": 2,
-        "container_id": 104,
-    },
-    {
-        "id": 5,
-        "name": "Eddard Stark",
-        "weight": 13,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 105,
-    },
-    {
-        "id": 6,
-        "name": "Gendry",
-        "weight": 17,
-        "width": 4,
-        "length": 3,
-        "height": 3,
-        "container_id": 106,
-    },
-    {
-        "id": 7,
-        "name": "Hodor",
-        "weight": 20,
-        "width": 3,
-        "length": 3,
-        "height": 4,
-        "container_id": 107,
-    },
-    {
-        "id": 8,
-        "name": "Jaime Lannister",
-        "weight": 18,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 108,
-    },
-    {
-        "id": 9,
-        "name": "Joffrey Baratheon",
-        "weight": 19,
-        "width": 4,
-        "length": 4,
-        "height": 2,
-        "container_id": 109,
-    },
-    {
-        "id": 10,
         "name": "Jon Snow",
         "weight": 14,
         "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 110,
-    },
-    {
-        "id": 11,
-        "name": "Margaery Tyrell",
-        "weight": 16,
-        "width": 4,
-        "length": 3,
-        "height": 3,
-        "container_id": 111,
-    },
-    {
-        "id": 12,
-        "name": "Melisandre",
-        "weight": 13,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 112,
-    },
-    {
-        "id": 13,
-        "name": "Petyr Baelish",
-        "weight": 15,
-        "width": 4,
-        "length": 3,
-        "height": 3,
-        "container_id": 113,
-    },
-    {
-        "id": 14,
-        "name": "Robb Stark",
-        "weight": 18,
-        "width": 3,
-        "length": 3,
-        "height": 3,
-        "container_id": 114,
-    },
-    {
-        "id": 15,
-        "name": "Samwell Tarly",
-        "weight": 17,
-        "width": 4,
-        "length": 3,
-        "height": 2,
-        "container_id": 115,
-    },
-    {
-        "id": 16,
-        "name": "Sansa Stark",
-        "weight": 14,
-        "width": 4,
-        "length": 3,
-        "height": 3,
-        "container_id": 116,
-    },
-    {
-        "id": 17,
-        "name": "Stannis Baratheon",
-        "weight": 15,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 117,
-    },
-    {
-        "id": 18,
-        "name": "Tyrion Lannister",
-        "weight": 12,
-        "width": 4,
-        "length": 3,
-        "height": 3,
-        "container_id": 118,
-    },
-    {
-        "id": 19,
-        "name": "Tywin Lannister",
-        "weight": 13,
-        "width": 5,
-        "length": 2,
-        "height": 2,
-        "container_id": 119,
-    },
-    {
-        "id": 20,
-        "name": "Ygritte",
-        "weight": 16,
-        "width": 4,
         "length": 4,
-        "height": 2,
-        "container_id": 120,
+        "height": 3
     },
     {
-        "id": 21,
-        "name": "Theon Greyjoy",
-        "weight": 14,
+        "name": "Daenerys Targaryen",
+        "weight": 10,
+        "width": 3,
+        "length": 2,
+        "height": 1
+    },
+    {
+        "name": "Tyrion Lannister",
+        "weight": 8,
+        "width": 2,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Cersei Lannister",
+        "weight": 11,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Sansa Stark",
+        "weight": 13,
         "width": 4,
         "length": 3,
-        "height": 3,
-        "container_id": 121,
+        "height": 2
     },
     {
-        "id": 22,
-        "name": "Tormund Giantsbane",
-        "weight": 17,
-        "width": 3,
-        "length": 3,
-        "height": 3,
-        "container_id": 122,
-    },
-    {
-        "id": 23,
         "name": "Bran Stark",
-        "weight": 12,
-        "width": 5,
+        "weight": 9,
+        "width": 3,
         "length": 2,
-        "height": 2,
-        "container_id": 123,
+        "height": 1
     },
     {
-        "id": 24,
+        "name": "Jaime Lannister",
+        "weight": 15,
+        "width": 5,
+        "length": 4,
+        "height": 3
+    },
+    {
+        "name": "Samwell Tarly",
+        "weight": 18,
+        "width": 6,
+        "length": 4,
+        "height": 3
+    },
+    {
+        "name": "Jorah Mormont",
+        "weight": 12,
+        "width": 4,
+        "length": 3,
+        "height": 2
+    },
+    {
+        "name": "Theon Greyjoy",
+        "weight": 11,
+        "width": 4,
+        "length": 3,
+        "height": 2
+    },
+    {
+        "name": "Brienne of Tarth",
+        "weight": 16,
+        "width": 5,
+        "length": 4,
+        "height": 3
+    },
+    {
+        "name": "Sandor Clegane",
+        "weight": 17,
+        "width": 6,
+        "length": 5,
+        "height": 4
+    },
+    {
+        "name": "Petyr Baelish",
+        "weight": 10,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Varys",
+        "weight": 12,
+        "width": 4,
+        "length": 3,
+        "height": 2
+    },
+    {
+        "name": "Melisandre",
+        "weight": 9,
+        "width": 3,
+        "length": 2,
+        "height": 1
+    },
+    {
         "name": "Bronn",
         "weight": 13,
         "width": 4,
         "length": 3,
-        "height": 3,
-        "container_id": 124,
+        "height": 2
     },
     {
-        "id": 25,
-        "name": "Sandor Clegane",
-        "weight": 18,
+        "name": "Gendry",
+        "weight": 14,
         "width": 4,
         "length": 3,
-        "height": 3,
-        "container_id": 125,
+        "height": 2
     },
+    {
+        "name": "Davos Seaworth",
+        "weight": 12,
+        "width": 4,
+        "length": 3,
+        "height": 2
+    },
+    {
+        "name": "Tormund Giantsbane",
+        "weight": 18,
+        "width": 6,
+        "length": 5,
+        "height": 4
+    },
+    {
+        "name": "Ygritte",
+        "weight": 10,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Missandei",
+        "weight": 8,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Grey Worm",
+        "weight": 13,
+        "width": 4,
+        "length": 3,
+        "height": 2
+    },
+    {
+        "name": "Margaery Tyrell",
+        "weight": 9,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    },
+    {
+        "name": "Olenna Tyrell",
+        "weight": 11,
+        "width": 3,
+        "length": 2,
+        "height": 2
+    }
 ]
-
 json_records = json.dumps(records, indent=4)
