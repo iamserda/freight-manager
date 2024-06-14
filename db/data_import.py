@@ -1,7 +1,7 @@
 import json # [missing-module-docstring]
 
 
-records = [
+boxes_records = [
     {
         "name": "Arya Stark",
         "weight": 12,
@@ -14,7 +14,7 @@ records = [
         "weight": 14,
         "width": 5,
         "length": 4,
-        "height": 3
+        "height": 2
     },
     {
         "name": "Daenerys Targaryen",
@@ -55,13 +55,13 @@ records = [
         "name": "Jaime Lannister",
         "weight": 15,
         "width": 5,
-        "length": 4,
+        "length": 3,
         "height": 3
     },
     {
         "name": "Samwell Tarly",
         "weight": 18,
-        "width": 6,
+        "width": 2,
         "length": 4,
         "height": 3
     },
@@ -82,16 +82,16 @@ records = [
     {
         "name": "Brienne of Tarth",
         "weight": 16,
-        "width": 5,
-        "length": 4,
+        "width": 3,
+        "length": 3,
         "height": 3
     },
     {
         "name": "Sandor Clegane",
         "weight": 17,
-        "width": 6,
-        "length": 5,
-        "height": 4
+        "width": 4,
+        "length": 4,
+        "height": 3
     },
     {
         "name": "Petyr Baelish",
@@ -138,9 +138,9 @@ records = [
     {
         "name": "Tormund Giantsbane",
         "weight": 18,
-        "width": 6,
+        "width": 3,
         "length": 5,
-        "height": 4
+        "height": 3
     },
     {
         "name": "Ygritte",
@@ -178,4 +178,19 @@ records = [
         "height": 2
     }
 ]
-json_records = json.dumps(records, indent=4)
+
+freights_records = [
+    {"id": 1, "container_id": 10, "box_id": 1},
+    {"id": 2, "container_id": 12, "box_id": 2},
+    {"id": 3, "container_id": 3, "box_id": 23},
+    {"id": 4, "container_id": 4, "box_id": 24},
+    {"id": 5, "container_id": 5, "box_id": 2},
+    {"id": 6, "container_id": 6, "box_id": 6},
+    {"id": 7, "container_id": 7, "box_id": 7},
+    {"id": 8, "container_id": 18, "box_id": 28},
+    {"id": 9, "container_id": 19, "box_id": 29},
+    {"id": 10, "container_id": 11, "box_id": 21}
+]
+
+boxes_records_as_json = json.dumps(boxes_records, indent=4)
+freights_records_as_json = json.dumps(boxes_records, indent=4)
