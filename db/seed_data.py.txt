@@ -1,7 +1,6 @@
-import json # [missing-module-docstring]
+{
 
-
-boxes_records = [
+"boxes": [
     {
         "name": "Arya Stark",
         "weight": 12,
@@ -30,6 +29,7 @@ boxes_records = [
         "length": 2,
         "height": 2
     },
+
     {
         "name": "Cersei Lannister",
         "weight": 11,
@@ -176,10 +176,8 @@ boxes_records = [
         "width": 3,
         "length": 2,
         "height": 2
-    }
-]
-
-freights_records = [
+    }],
+    "freights_records": [
     {"id": 1, "container_id": 10, "box_id": 1},
     {"id": 2, "container_id": 12, "box_id": 2},
     {"id": 3, "container_id": 3, "box_id": 23},
@@ -189,8 +187,6 @@ freights_records = [
     {"id": 7, "container_id": 7, "box_id": 7},
     {"id": 8, "container_id": 18, "box_id": 28},
     {"id": 9, "container_id": 19, "box_id": 29},
-    {"id": 10, "container_id": 11, "box_id": 21}
-]
+    {"id": 10, "container_id": 11, "box_id": 21}]
 
-boxes_records_as_json = json.dumps(boxes_records, indent=4)
-freights_records_as_json = json.dumps(boxes_records, indent=4)
+}
