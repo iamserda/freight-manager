@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "container_id": 10,
+        "box_id": 1
+    },
+    {
+        "id": 2,
+        "container_id": 12,
+        "box_id": 2
+    },
+    {
+        "id": 3,
+        "container_id": 3,
+        "box_id": 23
+    },
+    {
+        "id": 4,
+        "container_id": 4,
+        "box_id": 24
+    },
+    {
+        "id": 5,
+        "container_id": 5,
+        "box_id": 2
+    },
+    {
+        "id": 6,
+        "container_id": 6,
+        "box_id": 6
+    },
+    {
+        "id": 7,
+        "container_id": 7,
+        "box_id": 7
+    },
+    {
+        "id": 8,
+        "container_id": 18,
+        "box_id": 28
+    },
+    {
+        "id": 9,
+        "container_id": 19,
+        "box_id": 29
+    },
+    {
+        "id": 10,
+        "container_id": 11,
+        "box_id": 21
+    }
+]
