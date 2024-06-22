@@ -50,49 +50,50 @@ class Box:
             return float(self.width * self.height * self.length)
 
 
-# class Freight:
-#     """ Freight class, Freights contain Container Objects"""
-#     def __init__(self):
-#         self. freight_id = None,
-#         self.containers_id = set()
-#         self.box_id = set(),
-#         # self.from_location = None
-#         # self.to_location = None
+class Freight:
+    """ Freight class, Freights contain Container Objects"""
+    def __init__(self):
+        self. freight_id = None,
+        self.containers_id = set()
+        self.box_id = set(),
+        # self.from_location = None
+        # self.to_location = None
         
-#     def __setattr__(self, name: str, value: Any) -> None:
-#         pass
+    def __setattr__(self, name: str, value) -> None:
+        pass
     
-#     def set_freight_id(self, freight_id):
-#         self.freight_id = freight_id
-#         return True
+    def set_freight_id(self, freight_id):
+        self.freight_id = freight_id
+        return True
     
-#     def get_freight_id(self):
-#         return self.freight_id
+    def get_freight_id(self):
+        return self.freight_id
     
-#     def set_containers_id(self, container_id):
-#         if container_id not in self.containers_id:
-#             self.containers_id.add(container_id)
-#             return True
-#         else:
-#             print(f"ContainerID: {container_id} is already on this frieght.")
+    def set_containers_id(self, container_id):
+        if container_id not in self.containers_id:
+            self.containers_id.add(container_id)
+            return True
+        else:
+            print(f"ContainerID: {container_id} is already on this frieght.")
     
-#     def remove_container(self, container_id):
-#         if container_id not in self.containers_id:
-#             print(f"ContainerID: {container_id} is already on this frieght.")
-#         else:
-#             self.containers_id.remove(container_id)
-#             return True
+    def remove_container(self, container_id):
+        if container_id not in self.containers_id:
+            print(f"ContainerID: {container_id} is already on this frieght.")
+        else:
+            self.containers_id.remove(container_id)
+            return True
     
-#     def get_containers(self):
-#         return tuple(self.containers_id)
+    def get_containers(self):
+        return tuple(self.containers_id)
 
 
 class Container:
     """ Container class, containers contain boxes"""
     def __init__(self):
         self.id = id
-        self.loaded = []
-        self.max = 30
+        self.loaded_boxes_id = []
+        self.max_boxes = 10
+        self.available_space = 300
         self.is_full = False
     
     def __str__(self) -> str:
@@ -118,7 +119,10 @@ class Container:
             print(f"An error occurred! See [{db_error}]")
     
     def unload(self):
-        self.storage = []
+        self.loaded_boxes_id = []
+        self.max_boxes = 10
+        self.available_space = 300
+        self.is_full = False
     
     def set_full_status(self):
         self.is_full = len(self.load_box) >= 30
