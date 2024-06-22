@@ -10,7 +10,7 @@ def show_app_menu():
     x. Close Menu\n
     $: """
     
-    valid_option = range(1, 6)
+    valid_option = [1,2,3,4,5,98,99]
     choice = input(menu).strip()
     if choice.casefold() == "x":
         print("Terminating application at user's request...")
