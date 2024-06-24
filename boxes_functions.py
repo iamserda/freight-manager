@@ -42,7 +42,8 @@ def get_box_info():
     new_box.container_id = random.randint(1, 5)
     return new_box
 
-def show_box_types(db_conn:sqlite3.Connection):
+def get_all_boxes(db_conn:sqlite3.Connection):
+    """Getter: returns all boxes in the Boxes table."""
     sql_statement = """SELECT name, weight, width, length, height FROM boxes"""
     box_types_data = [zip(["name", "weight", "width", "length", "height"],item) for item in db_conn.execute(sql_statement).fetchall()]
     
