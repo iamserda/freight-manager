@@ -1,14 +1,14 @@
 import sqlite3
 
 class Box:
-    def __init__(self, name:str=None, width:float=0, length:float=0 , height:float=0, weight:float=0):
+    def __init__(self, name:str=None, width:float=0, length:float=0 , height:float=0, weight:float=0, container_id:int=0):
         self.id:int = None
         self.name:str = name
         self.weight:float = weight
         self.width:float = width
         self.length:float = length
         self.height:float = height
-        self.container_id:int = None
+        self.container_id:int = container_id
 
     def __str__(self) -> str:
         return f"name: {self.name}, dimensions:{self.width} in. x {self.length} in. x {self.height} in."
@@ -87,47 +87,47 @@ class Freight:
         return tuple(self.containers_id)
 
 
-class Container:
-    """ Container class, containers contain boxes"""
-    def __init__(self):
-        self.id = id
-        self.loaded_boxes_id = []
-        self.max_boxes = 10
-        self.available_space = 300
-        self.is_full = False
+# class Container:
+#     """ Container class, containers contain boxes"""
+#     def __init__(self):
+#         self.id = id
+#         self.loaded_boxes_id = []
+#         self.max_boxes = 10
+#         self.available_space = 300
+#         self.is_full = False
     
-    def __str__(self) -> str:
-        return f"ContainerID: {self.id} has includes {self.loaded} boxes aboard. {self.get_status()}"
+#     def __str__(self) -> str:
+#         return f"ContainerID: {self.id} has includes {self.loaded} boxes aboard. {self.get_status()}"
     
-    def save(self, db_conn=sqlite3.Connection):
-        """Save instance into database"""
-        sql_statement = """
-        INSERT INTO containers 
-        VALUES(:id, )"""
+#     def save(self, db_conn=sqlite3.Connection):
+#         """Save instance into database"""
+#         sql_statement = """
+#         INSERT INTO containers 
+#         VALUES(:id, )"""
     
-    def load_box(self, box:Box, db_path:str="db/base1.db", db_connection:sqlite3.Connection=None):
-        if self.is_full:
-            print(self.get_status)
-            return
-        try:
+#     def load_box(self, box:Box, db_path:str="db/base1.db", db_connection:sqlite3.Connection=None):
+#         if self.is_full:
+#             print(self.get_status)
+#             return
+#         try:
 
-            if db_connection is None:
-                db_connection = sqlite3.Connection(db_path)
-                db_connection.execute("INSERT INTO boxes VALUES(:id,:name,:weight,:length,:width,:height,:container)", box.__dict__)
-                self.storage.append(box.id)
-        except sqlite3.DatabaseError as db_error:
-            print(f"An error occurred! See [{db_error}]")
+#             if db_connection is None:
+#                 db_connection = sqlite3.Connection(db_path)
+#                 db_connection.execute("INSERT INTO boxes VALUES(:id,:name,:weight,:length,:width,:height,:container)", box.__dict__)
+#                 self.storage.append(box.id)
+#         except sqlite3.DatabaseError as db_error:
+#             print(f"An error occurred! See [{db_error}]")
     
-    def unload(self):
-        self.loaded_boxes_id = []
-        self.max_boxes = 10
-        self.available_space = 300
-        self.is_full = False
+#     def unload(self):
+#         self.loaded_boxes_id = []
+#         self.max_boxes = 10
+#         self.available_space = 300
+#         self.is_full = False
     
-    def set_full_status(self):
-        self.is_full = len(self.load_box) >= 30
+#     def set_full_status(self):
+#         self.is_full = len(self.load_box) >= 30
     
-    def get_status(self):
-        """Returns a string, either 'Container is full!' or 'Container has cargo space available!'"""
-        return "Container is full!" if self.is_full() else "Container has cargo space available!"
+#     def get_status(self):
+#         """Returns a string, either 'Container is full!' or 'Container has cargo space available!'"""
+#         return "Container is full!" if self.is_full() else "Container has cargo space available!"
 
