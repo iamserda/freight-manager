@@ -1,16 +1,12 @@
+import os
+from dotenv import load_dotenv
 import sqlite3
 from models import Box
 
+load_dotenv()
 
-def create_db():
-    """
-    Creates database file if it does not exits,
-    creates a connection to the database.
-    return the newly created connection.
-    """
-    db_connection = sqlite3.connect("./db/base1.db")
-    return db_connection
-
+def create_db()->sqlite3.Connection | None:
+    pass
 
 def create_table(db_connector: sqlite3.Connection, sql_: str):
     """Creates all tables for the app."""
